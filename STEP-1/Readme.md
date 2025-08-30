@@ -1,57 +1,48 @@
-<img width="650" height="311" alt="Screenshot 2025-08-30 at 11 35 44 AM" src="https://github.com/user-attachments/assets/0f867618-91b0-475d-9ab5-3342baca6cd7" />
+# ⚙️ Cisco Network Tool – Setup & Execution Guide  
+
+---
+
+## 🖼️ Project Setup Overview  
+<img width="650" height="311" alt="Project Setup Screenshot" src="https://github.com/user-attachments/assets/0f867618-91b0-475d-9ab5-3342baca6cd7" />
+
+---
+
+# 🛠️ 2. Environment Setup  
+
+Open your terminal or command prompt, navigate to the **`CISCO_NETWORK_TOOL`** directory, and run these commands to set up your Python environment.  
+
+---
+
+## 🔹 Create a Virtual Environment  
 
 
+`python -m venv .venv `
 
-# 🛠️ 2. Environment Setup
-Open your terminal or command prompt, navigate to the CISCO_NETWORK_TOOL directory, and run these commands to set up your Python environment.
+## 🔹 Activate the Environment
 
-## Create a virtual environment:
+- On Windows (PowerShell):
+  
 
-Bash
+`.\.venv\Scripts\Activate.ps1`
 
-python -m venv .venv
+- On macOS/Linux: 
 
+`source .venv/bin/activate`
 
-Activate the environment:
+✅ Your terminal prompt should now show (.venv)
 
-## On Windows:
+---
 
-Bash
+## 🔹 Install Necessary Libraries:
 
-.\.venv\Scripts\Activate.ps1
+`pip install networkx pyvis matplotlib`
 
+##  How to Run the Code
 
-On macOS/Linux:
+Make sure your terminal is in the root directory:
 
-Bash
-
-source .venv/bin/activate
-
-
-Your terminal prompt should now show (.venv).
-
-## Install necessary libraries:
-
-Bash
-
-pip install networkx pyvis matplotlib
-
-
-## 🚀 5. How to Run the Code
-Make sure your terminal is in the root directory (CISCO_NETWORK_TOOL/).
-
-Ensure your virtual environment is activated ((.venv) should be visible).
-
-Place all your .txt configuration files inside the config/ folder.
+`CISCO_NETWORK_TOOL/`
 
 Run the main script:
 
-Bash
-
-python src/main.py
-
-
-##OUTPUT EXPECTED:
-
-<img width="562" height="826" alt="Screenshot 2025-08-30 at 11 39 15 AM" src="https://github.com/user-attachments/assets/d8d21f26-6477-4385-8e4d-5f7d72bf646f" />
-
+`python src/main.py`
