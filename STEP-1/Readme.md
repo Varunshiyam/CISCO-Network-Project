@@ -10,6 +10,8 @@ Open your terminal or command prompt, navigate to the CISCO_NETWORK_TOOL directo
 Bash
 
 python -m venv .venv
+
+
 Activate the environment:
 
 ## On Windows:
@@ -17,11 +19,15 @@ Activate the environment:
 Bash
 
 .\.venv\Scripts\Activate.ps1
+
+
 On macOS/Linux:
 
 Bash
 
 source .venv/bin/activate
+
+
 Your terminal prompt should now show (.venv).
 
 ## Install necessary libraries:
