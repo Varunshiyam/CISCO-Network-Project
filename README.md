@@ -1,96 +1,168 @@
-# 🔗 Network Topology Parser & Visualizer
+# 🔗 Cisco Network Tool — Parser, Visualizer & Simulator
 
-This project is a **Python-based tool** that *parses router configuration files*, discovers **network links**, and visualizes the complete **network topology**.  
-It also provides **OSPF analysis** and allows simulating *link failures* to study **network resilience**.
+This project is a **Python-based networking tool** that walks you through the entire lifecycle of a Cisco networking project — from **parsing router configs** to **visualizing topologies**, running a **multithreaded simulation**, and generating **JSON reports**.  
+It is designed for learners ranging from **CCNA beginners** to **CCNP/CCIE aspirants**, making it a hands-on companion for real-world networking challenges.
 
 ---
 
 ## 📌 Features
-✨ The project provides the following capabilities:
+✨ This tool provides end-to-end functionality:
 
-- 📂 **Parse router configuration files** (`R1.txt`, `R2.txt`, `R3.txt`).
-- 🖥️ **Extract details**:
-  - 🏷️ *Router hostname*
-  - 🌐 *Interfaces, IP addresses, and subnet masks*
-  - 📡 *OSPF advertised networks*
-- 🔍 **Discover direct links** between routers.
-- 🗺️ **Build and visualize** the network graph using *NetworkX* + *Matplotlib*.
-- ⚡ **Simulate link failures** and recalculate shortest paths.
+- 📂 **Parse router configuration files** (`R1.txt`, `R2.txt`, `R3.txt`, etc.)
+- 🖥️ **Extract device details**:
+  - 🏷️ Router hostname  
+  - 🌐 Interfaces, IP addresses, and subnet masks  
+  - 📡 OSPF advertised networks  
+- 🔍 **Discover direct links** between routers
+- 🗺️ **Build and visualize** the network graph (NetworkX + Matplotlib)
+- ⚡ **Multithreaded simulation engine**  
+  - Device nodes run in parallel  
+  - Simulates neighbor discovery & link failures  
+- 📝 **Structured JSON Reports**  
+  - Captures parsed data, discovered links, simulation logs, and results
 
 ---
 
-## 🛠️ Installation
-Follow these steps to set up the project:
+## 🛠️ Installation & Setup
+Follow these steps to set up the environment:
 
-1. 📥 **Clone the repository**  
+1. 📥 **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/network-parser.git
-   cd network-parser
+   git clone https://github.com/your-username/cisco-network-tool.git
+   cd cisco-network-tool
 
+2. 🐍 **Create virtual environment & install dependencies**
+```
+python -m venv .venv
+source .venv/bin/activate   # On Mac/Linux
+.venv\Scripts\activate      # On Windows
 
-# 🌐 Cisco Network Project Guide
+pip install -r requirements.txt
+```
+3. ▶️ **Run the tool**
 
-This repository serves as a **step-by-step guide** for building, designing, and implementing Cisco networking projects.  
-It is tailored to learners from **beginner (CCNA)** level to **advanced (CCIE prep)** level, covering everything from **ideation to automation**.
-
----
-
-## 1️⃣ Project Ideation & Scoping
-💡 *Stuck on what to build?* Here are some project ideas tailored to your **goals and skill level**:
-
-- 🟢 **For Beginners (CCNA Level)**  
-  - Small Office/Home Office (SOHO) setup  
-  - Multi-branch office connectivity using static or simple dynamic routing  
-  - VLAN implementation with a *router-on-a-stick*  
-
-- 🟡 **For Intermediate Users (CCNP Level)**  
-  - Multi-area OSPF or EIGRP deployments  
-  - BGP peering  
-  - Redundant links with **HSRP/VRRP**  
-  - Securing the network with ACLs and Zone-Based Firewalls  
-
-- 🔴 **For Advanced Users (CCIE Prep)**  
-  - Complex **BGP** scenarios with traffic engineering  
-  - **MPLS VPNs**  
-  - **QoS** for voice and video  
-  - Network automation scripts  
+```
+python src/main.py
+```
 
 ---
 
-## 2️⃣ Network Design & Architecture
-🖼️ A solid **design** is the foundation of any successful network.  
 
-- 🛠️ **Create Topologies** → Logical and physical diagrams  
-- 🔢 **IP Addressing** → IPv4/IPv6 schemes with *subnetting & VLSM*  
-- 📈 **Scalability & Redundancy** → Build fault tolerance with:  
-  - STP  
-  - EtherChannel  
-  - First Hop Redundancy Protocols (FHRP)  
+## 📂 Project Directory Structure
+After completing all steps (1 → 5), your project structure will look like this:
+
+graphql
+```
+cisco-network-tool/
+│── configs/                # Sample router configs (R1.txt, R2.txt, etc.)
+│── output/                 # Generated reports & visualization outputs
+│── src/
+│   ├── parser.py           # Step 1: Parse router configs
+│   ├── topology_builder.py # Step 2: Build network topology
+│   ├── visualizer.py       # Step 3: Visualize with NetworkX + Matplotlib
+│   ├── simulation_engine.py# Step 4: Multithreaded simulation engine
+│   ├── reporter.py         # Step 5: Report generator (JSON)
+│   └── main.py             # Entry point to run the tool
+│── requirements.txt
+│── README.md
+```
+
 
 ---
 
-## 3️⃣ Technology & Product Selection
-Choosing the right tools and platforms is critical:  
+## 📖 Step-by-Step Guide
 
-- 📡 **Protocols** → OSPF, EIGRP, or BGP  
-- 💻 **Hardware** → Cisco routers/switches (physical or virtual)  
-- 🖥️ **Simulators/Emulators**:  
-  - Cisco Packet Tracer (basic labs)  
-  - GNS3 or EVE-NG (realistic enterprise labs)  
+### ✅ Step 1: Parser
+- Extract hostnames, interfaces, IPs, and OSPF networks from Cisco router configs.
+
+### ✅ Step 2: Topology Builder
+- Build a graph of devices and links using NetworkX.
+
+### ✅ Step 3: Visualization
+- Plot the network graph with Matplotlib, displaying nodes (routers) and edges (links).
+
+### ✅ Step 4: Simulation Engine
+
+- Launch multithreaded device nodes simulating:
+
+- Neighbor discovery:
+
+- Link failures & recovery
+
+- Each device runs as an independent thread.
+
+### ✅ Step 5: Reporter
+
+- Compile everything into a structured JSON file:
+
+- Device info
+
+- Link discovery results
+
+- Simulation logs
 
 ---
 
-## 4️⃣ Implementation & Configuration
-⚙️ This is the **hands-on stage** of your project.  
 
-- ✅ **Step-by-Step Guidance** → Configure Cisco devices (Routers, Switches, Firewalls)  
-- 💻 **Code Snippets & Examples** → Cisco IOS / IOS-XE / NX-OS commands  
-- 🔐 **Best Practices** → Build *secure & efficient* networks  
+## 📊 Example Output:
 
-📌 **Example: Configuring an OSPF Interface**
-```bash
-R1(config)# interface GigabitEthernet0/0
-R1(config-if)# ip address 192.168.1.1 255.255.255.0
-R1(config-if)# ip ospf 1 area 0
-R1(config-if)# no shutdown
+- Topology Graph
+Generated via Matplotlib, showing routers and links.
+
+- Simulation Logs
+```
+[R1] Discovered neighbor R2
+[R2] Discovered neighbor R3
+[Engine] Link between R1 and R2 failed
+[R1] Lost neighbor R2
+```
+- Final JSON Report (output/report.json)
+```
+{
+  "devices": {...},
+  "links": [...],
+  "simulation": {
+    "events": [
+      "R1 discovered R2",
+      "R2 discovered R3",
+      "Link between R1 and R2 failed"
+    ]
+  }
+}
+```
+
+---
+
+
+> ### 🎯 Who Is This For?:
+
+> - 🟢 Beginners (CCNA) → Learn parsing & simple topologies
+
+> - 🟡 Intermediate (CCNP) → Study OSPF/EIGRP behavior, simulate failures
+
+> - 🔴 Advanced (CCIE Prep) → Extend the engine, test automation workflows
+
+---
+
+
+### 📌 Future Enhancements:
+
+- 🔧 Support for BGP parsing
+
+- 📡 Real-time traffic flow simulation
+
+- 📑 Report export in PDF/HTML
+
+- 🤖 Integration with n8n / Ansible for automation
+
+---
+
+
+
+### 📝 License:
+
+This project is open-source under the MIT License.
+Feel free to fork, contribute, and experiment with new features!
+
+---
 
