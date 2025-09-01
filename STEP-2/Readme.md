@@ -1,67 +1,93 @@
-📁 1. Updated Project Directory Structure
-First, we'll add a new file, topology_builder.py, to your src directory and create a reports folder for the output.
+# 🕸️ Step 2: Topology Construction & Visualization
+
+> In this step, we take the parsed configuration data from **Step 1** and transform it into a **visual network topology**.  
+> Using **NetworkX** + **Pyvis**, we’ll build an interactive HTML graph where routers, switches, and PCs are color-coded.
+
+---
+
+## 📁 1. Updated Project Directory Structure
+We add a new file `topology_builder.py` inside the `src/` directory and create a `reports/` folder to store visualizations.  
 
 
-<img width="400" height="310" alt="Screenshot 2025-08-30 at 12 40 22 PM" src="https://github.com/user-attachments/assets/79b21673-50bd-4c2a-98ec-1374d95a8462" />
+``` CISCO_NETWORK_TOOL/
+├── configs/ # Device configuration files
+├── outputs/ # Parsed JSON outputs (Step 1)
+├── reports/ # 📊 New folder for HTML visualizations
+├── src/
+│ ├── config_parser.py # Parser from Step 1
+│ ├── topology_builder.py # 🆕 Builds & visualizes topology
+│ └── main.py # Updated main script
+└── README.md
+```
 
+---
 
+## ▶️ 2. Updated Main Script (src/main.py)
 
- 2. Code for Topology Builder (src/topology_builder.py)
-This new module takes the parsed data from Step 1, builds a network graph using NetworkX, and then creates an interactive HTML visualization with Pyvis.
+Now the main.py script performs both parsing (Step 1) and visualization (Step 2).
 
+---
 
-▶️ 3. Updated Main Script (src/main.py)
-Now, we update the main.py script to import and use the new TopologyBuilder class. It will now perform both Step 1 and Step 2.
+## 🚀 3. How to Run the Updated Code
+Make sure your environment is active, and run the following:
 
+### 🔹 Activate Virtual Environment
 
+#### Windows:
+```
+.venv\Scripts\activate
+```
 
-🚀 4. How to Run the Updated Code
-Make sure your project is set up as described and your virtual environment is active.
+#### Mac/Linux:
 
-Run the main.py script from your root directory (CISCO_NETWORK_TOOL/):
-
-
-Expected Output:
-
-<img width="378" height="410" alt="Screenshot 2025-08-30 at 12 40 07 PM" src="https://github.com/user-attachments/assets/717281b6-d811-4c21-a37b-4c7bb52113e5" />
-
-
-
-File Output:
-Opening the newly created .html file in your reports folder will show you an interactive graph of your network, which you can drag, zoom, and explore. Routers will be red, switches blue, and PCs orange.
-
-
-## TERMINAL CODE:
-
-----------
-
-##### Windows:
-.venv\Scripts\Activate
-
-
-----------
-
-#### MAC:
-
+```
 source .venv/bin/activate
 
-----------
+```
 
-### 3. Install networkx
 
+### 🔹 Install Required Packages
+
+``` 
 pip install networkx
-
-
-----------
-
-### Install Pyvis:
-
 pip install pyvis
+```
 
-----------
 
+### 🔹 Run the Script
 
-## FINALLY TO RUN AFTER ALL PROCESS:
-
+``` 
 python src/main.py
+```
+
+---
+
+
+## 🎯 4. Expected Output:
+
+- ✅ Terminal confirms that an HTML report has been generated
+
+- 📊 A new file: reports/network_topology.html
+
+- 🌐 Open it in your browser to explore the interactive graph
+
+---
+
+## 📸 5. Example output:
+
+<img width="378" height="410" alt="Screenshot of output" src="https://github.com/user-attachments/assets/717281b6-d811-4c21-a37b-4c7bb52113e5" />
+
+---
+
+## 6.💡 Visualization details:
+
+- 🔴 Routers → Red
+
+- 🔵 Switches → Blue
+
+- 🟠 PCs → Orange
+
+You can drag, zoom, and hover on nodes to see their details.
+
+---
 
