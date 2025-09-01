@@ -1,6 +1,6 @@
 # 🔗 Cisco Network Tool — Parser, Visualizer & Simulator
 
-This project is a **Python-based networking tool** that walks you through the entire lifecycle of a Cisco networking project — from **parsing router configs** to **visualizing topologies**, running a **multithreaded simulation**, and generating **JSON reports**.  
+This project is a **Python-based networking Automation** that walks you through the entire lifecycle of a Cisco networking project — from **parsing router configs** to **visualizing topologies**, running a **multithreaded simulation**, and generating **JSON reports**.  
 It is designed for learners ranging from **CCNA beginners** to **CCNP/CCIE aspirants**, making it a hands-on companion for real-world networking challenges.
 
 ---
