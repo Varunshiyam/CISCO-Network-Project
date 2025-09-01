@@ -1,9 +1,15 @@
+
+<img width="1470" height="213" alt="Screenshot 2025-09-01 at 6 28 26 PM" src="https://github.com/user-attachments/assets/344e9ff3-a789-49d8-ad70-cea7ea2e1233" />
+
+
+---
+
 # 🛜 Project: End-to-End Network Analysis & Simulation Framework
 
 
 ## 🔗 Cisco Network Tool — Parser, Visualizer & Simulator
 
-This project is a **Python-based networking Automation** that walks you through the entire lifecycle of a Cisco networking project — from **parsing router configs** to **visualizing topologies**, running a **multithreaded simulation**, and generating **JSON reports**.  
+> This project is a **Python-based networking Automation** that walks you through the entire lifecycle of a Cisco networking project — from **parsing router configs** to **visualizing topologies**, running a **multithreaded simulation**, and generating **JSON reports**.  
 It is designed for learners ranging from **CCNA beginners** to **CCNP/CCIE aspirants**, making it a hands-on companion for real-world networking challenges.
 
 ---
